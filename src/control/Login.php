@@ -6,7 +6,6 @@ require_once("../model/adminModel.php");
 
 $objUsuario = new UsuarioModel();
 $objSesion = new SessionModel();
-$objInstitucion= new InstitucionModel();
 $objAdmin = new AdminModel();
 
 $tipo = $_GET['tipo'];
@@ -35,14 +34,12 @@ if ($tipo == "iniciar_sesion") {
 
             $arrSesion = $objSesion->registrarSesion($id_usuario, $fecha_hora_inicio, $fecha_hora_fin, $llave);
             //buscamos ultimo periodo
-            $arrIes = $objInstitucion->buscarPrimerIe();
             $arrResponse = array('status' => true, 'msg' => 'Ingresar al sistema');
 
             $arr_contenido['sesion_id'] = $arrSesion;
             $arr_contenido['sesion_usuario'] = $id_usuario;
             $arr_contenido['sesion_usuario_nom'] = $arrPersona->nombres_apellidos;
             $arr_contenido['sesion_token'] = $token;
-            $arr_contenido['sesion_ies'] = $arrIes->id;
             $arrResponse['contenido'] = $arr_contenido;
         } else {
             $arrResponse = array('status' => false, 'msg' => 'Error, Usuario y/o Contraseña Incorrecta');
