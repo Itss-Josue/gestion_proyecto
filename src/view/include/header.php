@@ -113,6 +113,7 @@
                                         <i class="mdi mdi-diamond-stone"></i>Gestión <div class="arrow-down"></div>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="topnav-components">
+                                        <a href="<?php echo BASE_URL ?>usuarios" class="dropdown-item">Usuarios</a>
                                         <a href="<?php echo BASE_URL ?>clientes" class="dropdown-item">Clientes</a>
                                         <a href="<?php echo BASE_URL ?>proyectos" class="dropdown-item">Proyectos</a>
                                         <a href="<?php echo BASE_URL ?>clientes-api" class="dropdown-item">Cliente Api</a>
